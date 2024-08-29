@@ -1,0 +1,55 @@
+# Program purpose: We are creating a program that gives the user menu options to tally,average, or quit 
+# Author: Mahad Houssein
+# Date & version: 2023-02-12, version: 3.0
+
+
+
+def tally(num_1, num_2):
+	return num_1 + num_2
+def avg(total, num_values):
+	return total / num_values
+
+def get_num():
+	get_num = input("Input a number: ")
+	convert = float(get_num)
+	print(convert)
+	return convert
+
+def get_menu_choice():
+	menu_choice = input("choose the menu option that you want 1 (tally), 2 (average), 3 (quit): ")
+	print(menu_choice)
+	return menu_choice
+
+def show_menu():
+	print("Menu: 1.tally 2.average 3.quit")
+
+def main():
+	show_menu()
+	menu_choice = get_menu_choice()  
+	if(menu_choice == '3'): 
+		return
+
+	my_list = []
+	num_var   = input("How many numbers do you want to work with? ")
+	num_var   = int(num_var)	
+	run_total = 0  
+	sums = 0
+
+	print(num_var)
+
+	for n in range(num_var): 
+		my_list.append(get_num()) 
+	for num in my_list:
+		sums = tally(sums, num)
+	print("Menu choice: ",menu_choice)
+	while(menu_choice != 'quit' and menu_choice != '3'):
+		if(menu_choice == '1' or menu_choice == 'tally'):	
+			print("Tally for all values inputted is: ",sums)
+		elif (menu_choice == '2' or menu_choice == 'average'):
+			print(avg(sums, len(my_list)))
+		menu_choice = get_menu_choice()
+main()
+
+print("Thank You")	
+
+
