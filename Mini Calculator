@@ -1,0 +1,73 @@
+# Program purpose: We are creating an calculator for the users
+# Author: Mahad Houssein
+# Date & version: 2023-02-05
+
+
+# Used Variables for the program
+quit_option = 'q'
+
+# Making the user choose what type of operator, they want to use
+choose_operator = ""
+while (choose_operator != quit_option):			
+	# Making the user choose what type of operator, they want to use
+	choose_operator = input("operator (q to quit) [+, -, *, /]: ")
+	print(choose_operator)
+	
+	# if the user decides to quit 
+	if choose_operator == 'q':
+		print("Program Closing")
+		break
+
+	# if the user selects "+", then the program will confirm that they choose Addition
+	if choose_operator == '+':
+		print("Addition")
+		
+	# if the user selects "+", then the program will confirm that they choose Subtraction
+	if choose_operator == '-':
+		print("Subtraction")
+
+		# if the user selects "+", then the program will confirm that they choose Multipication
+	if choose_operator == '*':
+		print("Multipication")
+
+		# if the user selects "+", then the program will confirm that they choose Division
+	if choose_operator == '/':
+		print("Division")
+		
+	# Asking the user the choose the numbers that they want in the calculator
+	first_number  = input("Enter the 1st number: ")
+	second_number = input("Enter the 2nd number: ")
+	totalsum      = 0
+
+	# if the user selects "+", then the program will do Addition
+	if choose_operator == '+':
+		totalsum = int(first_number) + int(second_number)
+
+	# if the user selects "-", then the program will do Subtraction
+	elif choose_operator == '-':
+		totalsum = int(first_number) - int(second_number)
+		
+	# if the user selects "*", then the program will do Multipication
+	elif choose_operator == '*':
+		totalsum = int(first_number) * int(second_number)		
+
+	# if the user selects "/", then the program will do Division
+	elif choose_operator == '/' and second_number != '0':
+		totalsum = int(first_number) / int(second_number)
+		
+		# if the user selects 0 as a number when doing Division
+		if second_number == '0':
+			print("Invalid as dividing by zero is not allowed") 
+
+	# if the user has typed more something that are not numbers
+	else:
+		print("Invalid Section")
+
+	# print sum
+	print("sum: " + str(totalsum))
+	
+# Ending Statement
+print("Thank you for playing")
+
+ 
+
